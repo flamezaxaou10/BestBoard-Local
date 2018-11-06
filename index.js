@@ -15,6 +15,14 @@ server.get('/echo', (req, res) => {
   res.jsonp(req.query)
 })
 
+// Serve any static files built by React
+server.use(express.static(path.join(__dirname, "client/build")))
+
+server.get("/React", function(req, res) {
+  console.log('Loading React...')
+  res.sendFile(path.join(__dirname, "client/build", "index.html"))
+})
+
 
 io = io(serverIO)
 io.on('connection', client => {
@@ -46,19 +54,9 @@ server.use((req, res, next) => {
 
 server.use(
   jsonServer.rewriter({
-    '/widget/board/:id': '/widget/?boardId=:id',
-    '/': '/React'
+    '/widget/board/:id': '/widget/?boardId=:id'
   })
 )
-
-
-// Serve any static files built by React
-server.use(express.static(path.join(__dirname, "client/build")))
-
-server.get("/React", function(req, res) {
-  console.log('Loading React...')
-  res.sendFile(path.join(__dirname, "client/build", "index.html"))
-})
 
 const port = process.env.PORT || 5000
 

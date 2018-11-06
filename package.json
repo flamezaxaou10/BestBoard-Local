@@ -2,8 +2,8 @@
   "name": "serverReact",
   "version": "1.0.0",
   "scripts": {
-    "start": "npm run build-client && node server.js",
-    "start-local": "npm run build-client && PORT=8080 node server",
+    "start": "npm run build-client && node index.js",
+    "start-local": "npm run build-client && PORT=8080 node index",
     "build-client": "cd client && npm run build && cd .."
   },
   "dependencies": {

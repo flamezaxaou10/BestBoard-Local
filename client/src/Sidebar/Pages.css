@@ -1,0 +1,10 @@
+@import '../_variable.css';
+.editbtn {
+    color: var(--textColor);
+}
+.second {
+    color: var(--hoverItem);
+}
+.editbtn.del {
+    color: #ce4e4e;
+  }

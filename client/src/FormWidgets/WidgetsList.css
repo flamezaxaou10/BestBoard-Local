@@ -1,0 +1,80 @@
+@import '/_variable';
+.listwid:hover {
+    background-color: #f1f1f1;
+    box-sizing: border-box;
+}
+.listWidgets {
+    min-width: 100px;
+    overflow-y: auto;
+    max-height: 65vh;
+    overflow-x: hidden;
+}
+.listwid.active {
+    background-color: var(--activeItem);
+}
+.listwid {
+    background: transparent;
+    cursor: pointer;
+}
+.listwid span,.listwid figcaption {
+    pointer-events: none;
+}
+.listwid.active .figure-caption {
+    color: #f1f1f1;
+}
+.formWidget {
+    overflow-y: auto;
+    max-height: 65vh;
+    min-height: 65vh;
+}
+.modal-content.createwidget {
+    max-height: 100vh;
+}
+.btn-group {
+    z-index: 0;
+    /* flex-wrap: wrap; */
+    max-width: 100%;
+    overflow: auto;
+}
+.btn-group i{
+    font-size: 1rem;
+}
+.btn.active {
+    background-color: var(--activeItem);
+    z-index: 0;
+}
+.btn.or {
+    
+}
+.form-control[readonly] {
+    background-color: #f3f3f3;
+}
+.FormInputBasic {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f3f3f3;
+}
+.markMap {
+    font-size: 2rem;
+}
+#popupForm .collapse.show,#accordionExample .collapse.show{
+    border-left: 3px solid #ddd;
+    padding-left: 1rem;
+}
+.select .css-vj8t7z{
+    background: #f3f3f3!important;
+    border: none!important;
+}
+@media screen and (max-width: 575px) {
+    .listWidgets {
+        min-width: 100%;
+        overflow-x: auto;
+        max-height: 150px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #f3f3f3;
+    }
+    .listwid {
+        display: inline-block;
+        max-width: 33%;
+    }
+
+}

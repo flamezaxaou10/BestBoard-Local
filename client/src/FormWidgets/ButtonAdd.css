@@ -1,0 +1,25 @@
+@import '/_variable';
+
+  .circleMenu{
+    cursor: pointer;
+    display:flex; 
+    justify-content:center!important;
+    border-radius:50%;
+    height:60px;
+    width:60px;
+    background-color:var(--activeItem);
+    position: fixed;
+    bottom:40px;
+    right:40px;
+    font-size:40px;
+    color:var(--textWidgetColor);
+    transition:0.3s;
+  }
+
+  .circleMenu:hover{
+    background-color:var(--mentionBadge);
+  }
+  .ModalCreate {
+    background-color: var(--themeBg)
+  }
+  

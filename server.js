@@ -7,21 +7,6 @@ var http = require('http')
 var io = require('socket.io')
 var serverIO = http.createServer(server)
 const path = require("path")
-// Set default middlewares (logger, static, cors and no-cache)
-// server.use(middlewares)
-
-// Add custom routes before JSON Server router
-server.get('/echo', (req, res) => {
-  res.jsonp(req.query)
-})
-// Serve any static files built by React
-server.use(express.static(path.join(__dirname, "client/build")))
-
-server.get("/bestboard", function(req, res) {
-  console.log('Loading React...')
-  res.sendFile(path.join(__dirname, "client/build", "index.html"))
-})
-
 
 io = io(serverIO)
 io.on('connection', client => {
@@ -32,9 +17,20 @@ io.on('connection', client => {
   })
 })
 
-// To handle POST, PUT and PATCH you need to use a body-parser
-// You can use the one used by JSON Server
+server.use(middlewares)
 server.use(jsonServer.bodyParser)
+server.use(express.static(path.join(__dirname, "client/build")))
+server.get("/bestboard", function(req, res) {
+  console.log('Loading React...')
+  res.sendFile(path.join(__dirname, "client/build", "index.html"))
+})
+
+server.use(
+  jsonServer.rewriter({
+    '/widget/board/:id': '/widget/?boardId=:id'
+  })
+)
+
 server.use((req, res, next) => {
   var path = req.path.split('/')
   if (req.method === 'POST') {
@@ -51,16 +47,9 @@ server.use((req, res, next) => {
   next()
 })
 
-server.use(
-  jsonServer.rewriter({
-    '/widget/board/:id': '/widget/?boardId=:id'
-  })
-)
-
 const port = process.env.PORT || 5000
-
-// Use default router
 server.use(router)
+
 serverIO.listen(port, () => {
   console.log('JSON Server is running ' + port)
 })

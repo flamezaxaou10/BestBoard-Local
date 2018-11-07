@@ -36,7 +36,7 @@ class SideBar extends Component {
         <nav className="sidebar" id="scrollbar-style" data-spy="scroll">
           <div className="sidebar-header text-center">
           
-          <a href="/">
+          <a href="/bestboard">
             <img src={Logo} alt="" className="logoSide"/>
             <image className="my-svg-alternate logoSide" src={LogoPng} />
           </a>

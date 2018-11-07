@@ -46,7 +46,7 @@
         "filter": ",",
         "filterIndex": "0",
         "unit": "",
-        "icon": "",
+        "icon": "fab fa-accusoft",
         "jsValue": "",
         "manual": "false",
         "layout": {
@@ -62,7 +62,7 @@
         "x": 0,
         "y": 0,
         "h": 6,
-        "w": 3,
+        "w": 12,
         "minH": 4,
         "minW": 2,
         "maxH": 6,

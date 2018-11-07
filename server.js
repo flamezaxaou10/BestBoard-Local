@@ -18,7 +18,7 @@ server.get('/echo', (req, res) => {
 // Serve any static files built by React
 server.use(express.static(path.join(__dirname, "client/build")))
 
-server.get("/React", function(req, res) {
+server.get("/bestboard", function(req, res) {
   console.log('Loading React...')
   res.sendFile(path.join(__dirname, "client/build", "index.html"))
 })
@@ -54,7 +54,10 @@ server.use((req, res, next) => {
 
 server.use(
   jsonServer.rewriter({
-    '/widget/board/:id': '/widget/?boardId=:id'
+    '/api/widget/board/:id': '/widget/?boardId=:id',
+    '/api/board': '/board',
+    '/api/widget': '/widget',
+    '/api/datasource': '/datasource'
   })
 )
 

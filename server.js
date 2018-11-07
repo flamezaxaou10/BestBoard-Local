@@ -7,6 +7,8 @@ var http = require('http')
 var io = require('socket.io')
 var serverIO = http.createServer(server)
 
+server.use(middlewares)
+
 io = io(serverIO)
 io.on('connection', client => {
   console.log('user connected')
@@ -16,9 +18,7 @@ io.on('connection', client => {
   })
 })
 
-server.use(middlewares)
 server.use(jsonServer.bodyParser)
-
 server.use(
   jsonServer.rewriter({
     '/widget/board/:id': '/widget/?boardId=:id'
@@ -46,11 +46,8 @@ server.use((req, res, next) => {
   next()
 })
 
-
 const port = process.env.PORT || 5000
 server.use(router)
-
-
 serverIO.listen(port, () => {
   console.log('JSON Server is running ' + port)
 })

@@ -6,7 +6,6 @@ const middlewares = jsonServer.defaults()
 var http = require('http')
 var io = require('socket.io')
 var serverIO = http.createServer(server)
-const path = require("path")
 
 io = io(serverIO)
 io.on('connection', client => {
@@ -19,11 +18,6 @@ io.on('connection', client => {
 
 server.use(middlewares)
 server.use(jsonServer.bodyParser)
-server.use(express.static(path.join(__dirname, "client/build")))
-server.get("/bestboard", function(req, res) {
-  console.log('Loading React...')
-  res.sendFile(path.join(__dirname, "client/build", "index.html"))
-})
 
 server.use(
   jsonServer.rewriter({
@@ -32,6 +26,11 @@ server.use(
 )
 
 server.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  )
   var path = req.path.split('/')
   if (req.method === 'POST') {
     req.body._id = Date.now()
@@ -47,8 +46,10 @@ server.use((req, res, next) => {
   next()
 })
 
+
 const port = process.env.PORT || 5000
 server.use(router)
+
 
 serverIO.listen(port, () => {
   console.log('JSON Server is running ' + port)

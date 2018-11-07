@@ -14,7 +14,6 @@ const path = require("path")
 server.get('/echo', (req, res) => {
   res.jsonp(req.query)
 })
-console.log(middlewares)
 // Serve any static files built by React
 server.use(express.static(path.join(__dirname, "client/build")))
 

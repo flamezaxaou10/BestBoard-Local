@@ -8,13 +8,13 @@ var io = require('socket.io')
 var serverIO = http.createServer(server)
 const path = require("path")
 // Set default middlewares (logger, static, cors and no-cache)
-server.use(middlewares)
+// server.use(middlewares)
 
 // Add custom routes before JSON Server router
 server.get('/echo', (req, res) => {
   res.jsonp(req.query)
 })
-
+console.log(middlewares)
 // Serve any static files built by React
 server.use(express.static(path.join(__dirname, "client/build")))
 

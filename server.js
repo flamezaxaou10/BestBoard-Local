@@ -54,10 +54,8 @@ server.use((req, res, next) => {
 
 server.use(
   jsonServer.rewriter({
-    '/api/widget/board/:id': '/widget/?boardId=:id',
-    '/api/board': '/board',
-    '/api/widget': '/widget',
-    '/api/datasource': '/datasource'
+    '/widget/board/:id': '/widget/?boardId=:id',
+    '/': '/bestboard'
   })
 )
 

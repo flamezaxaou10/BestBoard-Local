@@ -1,10 +1,15 @@
 {
   "main.css": "static/css/main.c4b09c15.css",
   "main.css.map": "static/css/main.c4b09c15.css.map",
-  "main.js": "static/js/main.4fbe24bc.js",
-  "main.js.map": "static/js/main.4fbe24bc.js.map",
+  "main.js": "static/js/main.21c5d879.js",
+  "main.js.map": "static/js/main.21c5d879.js.map",
+  "static/media/Chart.png": "static/media/Chart.a0bed8b8.png",
+  "static/media/Cover.png": "static/media/Cover.29b9d4d5.png",
+  "static/media/Gauge.png": "static/media/Gauge.7c813b94.png",
+  "static/media/Image.png": "static/media/Image.1dc3841d.png",
+  "static/media/Map.png": "static/media/Map.3a7dca25.png",
+  "static/media/Table.png": "static/media/Table.b3a8e102.png",
   "static/media/bestlogo.svg": "static/media/bestlogo.8b6825e4.svg",
   "static/media/bg.jpg": "static/media/bg.139a712a.jpg",
-  "static/media/gauge.jpg": "static/media/gauge.a4b817a8.jpg",
   "static/media/logo.png": "static/media/logo.2215737a.png"
 }

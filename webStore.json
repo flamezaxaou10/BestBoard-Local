@@ -2,11 +2,11 @@
   "board": [
     {
       "boardName": "Home",
-      "colorName": "native",
+      "colorName": "clean",
+      "_id": "1543543487600",
       "notiSetting": {
         "forms": []
       },
-      "_id": 1543543487600,
       "id": 1543543487600
     }
   ],

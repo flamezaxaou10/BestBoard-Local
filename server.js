@@ -49,5 +49,7 @@ server.use((req, res, next) => {
 const port = process.env.PORT || 5000
 server.use(router)
 serverIO.listen(port, () => {
-  console.log('JSON Server is running ' + port)
+  console.log('BestBoard is Running ')
+  console.log('Click Link : http://localhost:' + port)
+  console.log('Support Google Chrome only..')
 })

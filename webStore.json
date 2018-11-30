@@ -3,8 +3,11 @@
     {
       "boardName": "Home",
       "colorName": "native",
-      "_id": "1541140034798",
-      "id": 1541140034798
+      "notiSetting": {
+        "forms": []
+      },
+      "_id": 1543543487600,
+      "id": 1543543487600
     }
   ],
   "datasource": [
@@ -19,34 +22,22 @@
       },
       "_id": "1541044110627",
       "id": "1541044110627"
-    },
-    {
-      "datasource": {
-        "typeDatasource": "NETPIE",
-        "name": "NETPIE Microgear",
-        "appID": "l",
-        "key": "l",
-        "secret": "p",
-        "topic": "/#"
-      },
-      "_id": 1541184905136,
-      "id": 1541184905136
     }
   ],
   "widget": [
     {
-      "_id": "1541562855726",
-      "boardId": "1541140034798",
+      "_id": "1543543500168",
+      "boardId": "1543543487600",
       "widget": {
         "typeWidget": "NumberBox",
         "title": "Number Box",
         "value": "/SmartOfficeAt418B/table2",
-        "body": "56.00,24.40,860",
+        "body": "55.70,24.70,843",
         "datasource": "1541044110627",
         "filter": ",",
-        "filterIndex": "1",
-        "unit": "*c",
-        "icon": "fab fa-accusoft",
+        "filterIndex": 0,
+        "unit": "%",
+        "icon": "fas fa-tint",
         "jsValue": "",
         "manual": false,
         "layout": {
@@ -68,17 +59,17 @@
         "maxH": 6,
         "maxW": 12
       },
-      "id": 1541562855726
+      "id": 1543543500168
     },
     {
-      "_id": "1541563210479",
-      "boardId": "1541140034798",
+      "_id": "1543543519650",
+      "boardId": "1543543487600",
       "widget": {
         "typeWidget": "Gauge",
         "title": "Gauge",
         "value": "/SmartOfficeAt418B/table2",
-        "body": "52.30,24.20,871",
-        "unit": "",
+        "body": "55.70,24.70,843",
+        "unit": "%",
         "minvalue": "0",
         "setColor": "",
         "theme": "light",
@@ -92,23 +83,106 @@
         "layout": {
           "w": 3,
           "h": 7,
-          "minW": 3,
+          "minW": 2,
           "minH": 6,
           "maxW": 6,
           "maxH": 10
         }
       },
       "layout": {
-        "x": 3,
-        "y": 0,
-        "h": 6,
+        "x": 0,
+        "y": 6,
+        "h": 7,
         "w": 3,
         "minH": 6,
-        "minW": 3,
+        "minW": 2,
         "maxH": 10,
         "maxW": 6
       },
-      "id": 1541563210479
+      "id": 1543543519650
+    },
+    {
+      "_id": "1543543529382",
+      "boardId": "1543543487600",
+      "widget": {
+        "typeWidget": "ProgressBar",
+        "title": "Progress Bar",
+        "value": "/SmartOfficeAt418B/table5",
+        "body": "49.90,24.20,855",
+        "unit": "",
+        "strokeWidth": "8",
+        "trailWidth": "8",
+        "strokeColor": "auto",
+        "trailColor": "#D9D9D9",
+        "strokeLinecap": "round",
+        "datasource": "1541044110627",
+        "filter": ",",
+        "filterIndex": 0,
+        "jsValue": "",
+        "manual": false,
+        "layout": {
+          "w": 3,
+          "h": 5,
+          "minW": 2,
+          "minH": 5,
+          "maxW": 6,
+          "maxH": 6
+        }
+      },
+      "layout": {
+        "x": 0,
+        "y": 13,
+        "h": 5,
+        "w": 3,
+        "minH": 5,
+        "minW": 2,
+        "maxH": 6,
+        "maxW": 6
+      },
+      "id": 1543543529382
+    },
+    {
+      "_id": "1543543599735",
+      "boardId": "1543543487600",
+      "widget": {
+        "typeWidget": "Chart",
+        "title": "Chart",
+        "feedID": "418BSensors",
+        "feedAPI": "fYftUD5DPM2KX7OWRwfSoP2i9upFrL3u",
+        "values": [
+          {
+            "value": "Temp_Table_1"
+          },
+          {
+            "value": "Humidity_Table_1"
+          }
+        ],
+        "type": "monotone",
+        "stroke": "#8884d8",
+        "fillOpacity": 1,
+        "fill": "url(#color)",
+        "jsValue": "",
+        "manual": "",
+        "layout": {
+          "w": 6,
+          "h": 6,
+          "minW": 6,
+          "minH": 6,
+          "maxW": 12,
+          "maxH": 100
+        }
+      },
+      "layout": {
+        "x": 3,
+        "y": 0,
+        "h": 11,
+        "w": 7,
+        "minH": 6,
+        "minW": 6,
+        "maxH": 100,
+        "maxW": 12
+      },
+      "id": 1543543599735
     }
   ]
 }
